@@ -10,7 +10,7 @@ Sklearn Stacking Model
         :target: https://travis-ci.org/josh-howes/sklearn_stacking_model
 
 .. image:: https://readthedocs.org/projects/sklearn-stacking-model/badge/?version=latest
-        :target: https://sklearn-stacking-model.readthedocs.io/en/latest/?badge=latest
+        :target: https://sklearn-stacking.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 .. image:: https://pyup.io/repos/github/josh-howes/sklearn_stacking_model/shield.svg
