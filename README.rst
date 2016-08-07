@@ -22,7 +22,7 @@ Sklearn compatible implementation of a stacking model.
 
 
 * Free software: MIT license
-* Documentation: https://sklearn-stacking-model.readthedocs.io.
+* Documentation: https://sklearn-stacking.readthedocs.io.
 
 
 Features
