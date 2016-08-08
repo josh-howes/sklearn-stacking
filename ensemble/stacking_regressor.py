@@ -87,7 +87,7 @@ class StackingRegressor(BaseEstimator, RegressorMixin, TransformerMixin):
                                                             random_state=self.random_state)
 
         n_estimators = len(self.estimators)
-        self.estimators_ = Parallel(n_jobs=-n_estimators)(
+        self.estimators_ = Parallel(n_jobs=n_estimators)(
             delayed(_parallel_fit)(
                 estimator,
                 X_train,
