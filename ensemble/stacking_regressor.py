@@ -9,7 +9,7 @@ import numpy as np
 from sklearn.base import BaseEstimator, RegressorMixin, TransformerMixin, clone
 from sklearn.externals import six
 from sklearn.utils.validation import check_is_fitted
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Lasso
 from sklearn.cross_validation import train_test_split
 from sklearn.externals.joblib import Parallel, delayed
 
@@ -75,7 +75,8 @@ class StackingRegressor(BaseEstimator, RegressorMixin, TransformerMixin):
                                  ' should be a list of estimators.')
 
         if self.combiner is None:
-            self.combiner = LinearRegression(fit_intercept=False, normalize=True)
+            # Normalizing and contraining coefficients to postive numbers helps with multilinearity
+            self.combiner = Lasso(alpha=1e-9, positive=True, fit_intercept=False, normalize=True)
 
         if not isinstance(self.combiner, RegressorMixin):
             raise AttributeError('Invalid `combiner` attribute, `combiner`'
